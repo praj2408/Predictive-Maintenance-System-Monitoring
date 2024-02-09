@@ -1,10 +1,10 @@
 pandas
 numpy
-scikit-learn
+scikit-learn==1.2.2
 seaborn
 matplotlib
 ipykernel
 Flask
-
-
--e .
+imbalanced-learn
+imblearn
+#-e .
