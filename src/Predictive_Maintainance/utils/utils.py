@@ -13,3 +13,5 @@ def type_of_failure(row_name,df):
         df.loc[row_name, 'type_of_failure'] = 'OSF'
     elif df.loc[row_name, 'RNF'] == 1:
         df.loc[row_name, 'type_of_failure'] = 'RNF'
+    else:
+        df.loc[row_name, 'type_of_failure'] = 'no failure'
