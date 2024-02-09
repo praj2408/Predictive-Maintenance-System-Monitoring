@@ -1,5 +1,8 @@
 import os
 import sys
+from pathlib import Path
+
+import pickle
 
 from src.Predictive_Maintainance.logger import logging
 from src.Predictive_Maintainance.exception import CustomException
@@ -76,6 +79,11 @@ class DataTransformation:
             scale_cols = ['Rotational speed [rpm]', 'Torque [Nm]', 'Tool wear [min]', 'Air temperature [c]', 'Process temperature [c]']
             
             df_scaled = scaler.fit_transform(df[scale_cols])
+            
+            with open(Path("artifacts", "scaler.pkl"), "wb") as f:
+                pickle.dump(scaler, f)
+            
+            
             df_scaled = pd.DataFrame(df_scaled)
             df_scaled.columns = scale_cols
 
@@ -96,6 +104,8 @@ class DataTransformation:
             X_resampled, y_resampled = smote.fit_resample(X, y)
 
             df_sampled = pd.concat([X_resampled, y_resampled], axis=1)
+            
+            logging.info(f"df sampled head: \n {df_sampled.head().to_string()}")
             
             logging.info("Over sampling stage completed successfully")
                 

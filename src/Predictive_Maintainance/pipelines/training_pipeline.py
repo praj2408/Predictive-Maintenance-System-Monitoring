@@ -2,6 +2,8 @@
 
 from src.Predictive_Maintainance.components.data_ingestion import DataIngestion
 from src.Predictive_Maintainance.components.data_transformation import DataTransformation
+from src.Predictive_Maintainance.components.model_trainer import ModelTrainer
+
 
 
 
