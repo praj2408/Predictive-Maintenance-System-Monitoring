@@ -9,4 +9,5 @@ imbalanced-learn==0.12.0
 #pickle
 mlflow
 evidently
+dvc
 #-e .
