@@ -17,6 +17,7 @@ from evidently.test_preset import DataStabilityTestPreset
 
 from evidently.report import Report
 from evidently.metric_preset import DataDriftPreset, DataQualityPreset, ClassificationPreset
+from sklearn.metrics import accuracy_score, confusion_matrix, precision_score, recall_score, f1_score, classification_report
 
 
 from sklearn.model_selection import train_test_split
@@ -24,7 +25,6 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.svm import SVC
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import accuracy_score, confusion_matrix, precision_score, recall_score, f1_score, classification_report
 
 
 lr = LogisticRegression()
@@ -33,9 +33,7 @@ dt = DecisionTreeClassifier()
 rf = RandomForestClassifier()
 
 models = [lr, svc, dt, rf]
-model_name = ["Logistic Regression", "SVC", "Decision Tree", "Random Forest"]
-
-
+#model_name = ["Logistic Regression", "SVC", "Decision Tree", "Random Forest"]
 
 
 @dataclass
@@ -44,43 +42,61 @@ class ModelTrainerConfig:
     trained_model_file_path_2: str = os.path.join("artifacts", "model_2.pkl") # type of failure
     
     
-
 class ModelTrainer:
     def __init__(self):
         self.model_trainer_config = ModelTrainerConfig()
+        
+        
+    def Model1(self, df):
+        X = df.drop(["Machine failure", "type_of_failure"], axis=1)
+        y = df["Machine failure"]
+        
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+        
+        lr.fit(X_train, y_train)
+        y_pred = lr.predict(X_test)
+        acc = accuracy_score(y_test, y_pred) * 100
+        prec = precision_score(y_test, y_pred) * 100
+        rec = recall_score(y_test, y_pred) * 100
+        f1 = f1_score(y_test, y_pred) * 100
+        return [acc, prec, rec, f1]
+    
+    def Model2(self, df):
+        X = df.drop(["Machine failure", "type_of_failure"], axis=1)
+        y = df["type_of_failure"]
+        
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+        
+        svc.fit(X_train, y_train)
+        y_pred = svc.predict(X_test)
+        acc = accuracy_score(y_test, y_pred) * 100
+        prec = precision_score(y_test, y_pred) * 100
+        rec = recall_score(y_test, y_pred) * 100
+        f1 = f1_score(y_test, y_pred) * 100
+        return [acc, prec, rec, f1]
 
-    def initiate_model_training(self, train_array, test_array):
+    def initiate_model_training(self,df):
         try:
             
-            def model1(df:pd.DataFrame):
                 X = df.drop(["Machine failure", "type_of_failure"], axis=1)
                 y = df["Machine failure"]
                 
                 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
             
                 scores = []
+                
                 for i, m in enumerate(models):
-                    m.fit(X_train.values, y_train.values)
+                    m.fit(X_train, y_train)
                     y_pred = m.predict(X_test)
                     acc = accuracy_score(y_test, y_pred) * 100
                     prec = precision_score(y_test, y_pred) * 100
                     rec = recall_score(y_test, y_pred) * 100
                     f1 = f1_score(y_test, y_pred) * 100
                     scores.append([acc, prec, rec, f1])
+
                 
-                with mlflow.start_run():
-                    mlflow.sklearn.log_model(m, model_name[i])
-                    mlflow.log_metric("Accuracy", acc)
-                    mlflow.log_metric("Precision", prec)
-                    mlflow.log_metric("Recall", rec)
-                    mlflow.log_metric("F1", f1)
-                    
-                scores_df = pd.DataFrame(
-                columns=["Model"], data=["Logistic Regression", "SVC", "Decision Tree", "Random Forest"]
-                                        )
-                scores_df = pd.concat(
-                    [scores_df, pd.DataFrame(scores, columns=["Accuracy", "Precision", "Recall", "F1"])], axis=1
-                                    )
+                scores_df = pd.DataFrame(columns=["Model"], data=["Logistic Regression", "SVC", "Decision Tree", "Random Forest"])
+                scores_df = pd.concat([scores_df, pd.DataFrame(scores, columns=["Accuracy", "Precision", "Recall", "F1"])], axis=1)
                 
                 best_model_idx = scores_df["F1"].idxmax()
                 best_model_name = scores_df.loc[best_model_idx, 'Model']
@@ -94,7 +110,9 @@ class ModelTrainer:
                 logging.info("Best Model: {} ".format(best_model))
                 logging.info(f"Classification Report:\n{report}")
                 
+                print(scores_df, best_model)
                 return scores_df, best_model, best_model_name, report
+                
             
         except Exception as e:
             raise CustomException(e, sys)
