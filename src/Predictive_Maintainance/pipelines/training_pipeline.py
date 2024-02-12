@@ -21,6 +21,7 @@ raw_data_path = obj.initiate_data_ingestion()
 
 
 data_trainformation = DataTransformation()
-df = data_trainformation.initiate_data_transformation(raw_data_path)
+df_sampled = data_trainformation.initiate_data_transformation(raw_data_path)
  
-
+model_trainer = ModelTrainer()
+model_trainer.initiate_model_training(df_sampled)
