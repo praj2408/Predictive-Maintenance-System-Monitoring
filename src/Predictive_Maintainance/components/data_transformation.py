@@ -53,6 +53,7 @@ class DataTransformation:
             #drop productid and uid
             
             df.drop(['UDI', 'Product ID'], axis=1, inplace=True)
+            df.drop(['TWF', 'HDF', 'PWF', 'OSF', 'RNF'], axis=1, inplace=True)
             logging.info('removed productid and uid from the dataset')
 
             
