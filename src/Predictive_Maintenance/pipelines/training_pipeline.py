@@ -1,9 +1,9 @@
 
 
-from src.Predictive_Maintainance.components.data_ingestion import DataIngestion
-from src.Predictive_Maintainance.components.data_transformation import DataTransformation
-from src.Predictive_Maintainance.components.model_trainer import ModelTrainer
-# from src.Predictive_Maintainance.components.model_evaluation import ModelEvaluation
+from src.Predictive_Maintenance.components.data_ingestion import DataIngestion
+from src.Predictive_Maintenance.components.data_transformation import DataTransformation
+from src.Predictive_Maintenance.components.model_trainer import ModelTrainer
+# from src.Predictive_Maintenance.components.model_evaluation import ModelEvaluation
 
 
 
@@ -12,8 +12,8 @@ from src.Predictive_Maintainance.components.model_trainer import ModelTrainer
 
 import os , sys
 
-from src.Predictive_Maintainance.logger import logging
-from src.Predictive_Maintainance.exception import CustomException
+from src.Predictive_Maintenance.logger import logging
+from src.Predictive_Maintenance.exception import CustomException
 
 import pandas as pd
 

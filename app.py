@@ -7,7 +7,7 @@ import json
 import plotly.express as px
 import plotly.graph_objs as go
 
-from src.Predictive_Maintainance.pipelines.prediction_pipeline import prediction
+from src.Predictive_Maintenance.pipelines.prediction_pipeline import prediction
 
 with st.sidebar:
     st.title("Predictive Maintenance Project")

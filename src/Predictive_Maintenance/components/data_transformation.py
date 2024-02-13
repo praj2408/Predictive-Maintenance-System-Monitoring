@@ -4,8 +4,8 @@ from pathlib import Path
 
 import pickle
 
-from src.Predictive_Maintainance.logger import logging
-from src.Predictive_Maintainance.exception import CustomException
+from src.Predictive_Maintenance.logger import logging
+from src.Predictive_Maintenance.exception import CustomException
 
 import pandas as pd
 import numpy as np
@@ -16,7 +16,7 @@ from sklearn.preprocessing import MinMaxScaler
 
 from imblearn.over_sampling import SMOTE
 
-from src.Predictive_Maintainance.utils.utils import type_of_failure
+from src.Predictive_Maintenance.utils.utils import type_of_failure
 
 ordinal_encoder =OrdinalEncoder(categories=[['L', 'M', 'H']])
 label_encoder = LabelEncoder()

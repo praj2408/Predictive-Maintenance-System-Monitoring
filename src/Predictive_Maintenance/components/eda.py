@@ -14,7 +14,7 @@ import plotly
 import json
 
 
-from src.Predictive_Maintainance.logger import logging
+from src.Predictive_Maintenance.logger import logging
 ARTIFACTS_DIR = "artifacts"
 
 warnings.filterwarnings("ignore")

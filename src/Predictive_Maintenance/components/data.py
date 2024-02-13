@@ -14,7 +14,7 @@ from sklearn.preprocessing import (
     OrdinalEncoder,
 )
 
-from src.Predictive_Maintainance.logger import logging
+from src.Predictive_Maintenance.logger import logging
 ARTIFACTS_DIR = "artifacts"
 
 warnings.filterwarnings("ignore")

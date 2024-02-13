@@ -1,8 +1,8 @@
 import os
 import sys
 
-from src.Predictive_Maintainance.logger import logging
-from src.Predictive_Maintainance.exception import CustomException
+from src.Predictive_Maintenance.logger import logging
+from src.Predictive_Maintenance.exception import CustomException
 
 import pandas as pd
 import numpy as np

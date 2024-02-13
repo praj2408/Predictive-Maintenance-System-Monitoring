@@ -7,8 +7,8 @@ import pickle
 from dataclasses import dataclass
 
 
-from src.Predictive_Maintainance.exception import CustomException
-from src.Predictive_Maintainance.logger import logging
+from src.Predictive_Maintenance.exception import CustomException
+from src.Predictive_Maintenance.logger import logging
 
 import mlflow
 import mlflow.sklearn
