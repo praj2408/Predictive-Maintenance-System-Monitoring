@@ -15,7 +15,7 @@ def get_requirements(file_path:str)->List[str]:
     return requirements"""
 
 setup(
-    name='Predictive_Maintainance',
+    name='Predictive_Maintenance',
     version='0.0.1',
     author='Prajwal Krishna',
     author_email='prajwalgbdr03@gmail.com',
