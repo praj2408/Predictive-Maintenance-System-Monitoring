@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/Projects/Predictive-Maintainance/mlruns/0/f57d08fa264240bfae3c48bfb470974f/artifacts
+end_time: 1707800222265
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: f57d08fa264240bfae3c48bfb470974f
+run_name: efficient-donkey-907
+run_uuid: f57d08fa264240bfae3c48bfb470974f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1707800217612
+status: 3
+tags: []
+user_id: prajw

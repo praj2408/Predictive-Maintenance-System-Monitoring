@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/Projects/Predictive-Maintainance/mlruns/0/7bd4b10949734a6bb0c74256a3b3a511/artifacts
+end_time: 1707800329476
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 7bd4b10949734a6bb0c74256a3b3a511
+run_name: calm-bug-452
+run_uuid: 7bd4b10949734a6bb0c74256a3b3a511
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1707800325201
+status: 3
+tags: []
+user_id: prajw

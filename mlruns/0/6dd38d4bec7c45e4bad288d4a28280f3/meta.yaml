@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/Projects/Predictive-Maintainance/mlruns/0/6dd38d4bec7c45e4bad288d4a28280f3/artifacts
+end_time: 1707800261814
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 6dd38d4bec7c45e4bad288d4a28280f3
+run_name: carefree-seal-481
+run_uuid: 6dd38d4bec7c45e4bad288d4a28280f3
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1707800257324
+status: 3
+tags: []
+user_id: prajw

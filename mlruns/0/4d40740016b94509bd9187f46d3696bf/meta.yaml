@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/Projects/Predictive-Maintainance/mlruns/0/4d40740016b94509bd9187f46d3696bf/artifacts
+end_time: 1707800359896
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 4d40740016b94509bd9187f46d3696bf
+run_name: intelligent-doe-693
+run_uuid: 4d40740016b94509bd9187f46d3696bf
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1707800355108
+status: 3
+tags: []
+user_id: prajw

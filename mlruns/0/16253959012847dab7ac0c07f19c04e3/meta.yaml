@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/Projects/Predictive-Maintainance/mlruns/0/16253959012847dab7ac0c07f19c04e3/artifacts
+end_time: 1707800267213
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 16253959012847dab7ac0c07f19c04e3
+run_name: colorful-whale-780
+run_uuid: 16253959012847dab7ac0c07f19c04e3
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1707800262480
+status: 3
+tags: []
+user_id: prajw

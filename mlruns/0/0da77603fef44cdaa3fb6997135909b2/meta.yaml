@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/Projects/Predictive-Maintainance/mlruns/0/0da77603fef44cdaa3fb6997135909b2/artifacts
+end_time: 1707800292947
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 0da77603fef44cdaa3fb6997135909b2
+run_name: chill-crow-143
+run_uuid: 0da77603fef44cdaa3fb6997135909b2
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1707800288889
+status: 3
+tags: []
+user_id: prajw

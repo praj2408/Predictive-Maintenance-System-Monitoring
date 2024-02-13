@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/Projects/Predictive-Maintainance/mlruns/0/ac32dad0ac554df9aa53ff5ecb248264/artifacts
+end_time: 1707800287463
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: ac32dad0ac554df9aa53ff5ecb248264
+run_name: silent-grouse-609
+run_uuid: ac32dad0ac554df9aa53ff5ecb248264
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1707800283253
+status: 3
+tags: []
+user_id: prajw
