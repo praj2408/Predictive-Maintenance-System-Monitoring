@@ -42,7 +42,23 @@ def prediction(type, rpm, torque, tool_wear, air_temp, process_temp):
     elif prediction1[0] == 1:
         result1 = 'Machine Failure'
         
-    print (result1)
+   
+    
+    prediction2 = model2.predict([[type, rpm, torque, tool_wear, air_temp, process_temp]])
+    prediction2 = int(prediction2)
+
+    encoding = {0: 'Heat Dissipation Failure',
+                1: 'Overstrain Failure',
+                2: 'Power Failure',
+                3: 'Random Failure',
+                4: 'Tool Wear Failure',
+                5: 'No Failure'}
+    
+    result2 = encoding[prediction2]
+
+    print(result1, result2)
+
+    return result1, result2
 
 
 prediction('Low', 1410.0,65.70,191.00,25.75,35.85)
