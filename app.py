@@ -1,5 +1,8 @@
 import streamlit as st
 from streamlit_extras import add_vertical_space
+import streamlit.components.v1 as components
+
+st.set_page_config(layout='wide')
 
 import pandas as pd
 
@@ -19,7 +22,7 @@ with st.sidebar:
 
 
 if choice == "Main":
-    with open("README.md", "r") as file:
+    with open("frontend/main/main_page.md", "r") as file:
         readme_contents = file.read()
     st.markdown(readme_contents)
     
@@ -32,6 +35,45 @@ if choice == "EDA":
     st.write("What is the distribution of the 'machine failure' label in the dataset? How many instances have failed and how many have not failed?")
     
     
+    
+
+if choice == "Performance Measures":
+    
+    pass
+    
+    
+    
+    
+    
+if choice == "Monitoring Reports":
+    
+    options = st.selectbox('Choose the reports: ',('Data Report', 'Model 1 report', 'Model 2 report'))
+    
+    if options=='Data Report':
+        with open("reports/data_drift.html", "r",encoding="utf-8") as f:
+            html_report = f.read()
+        
+        components.html(html_report, scrolling=True, height=700)
+        
+        
+    if options=='Model 1 report':
+        with open("reports/classification_performance_report.html", "r",encoding="utf-8") as f:
+            html_report = f.read()
+        
+        components.html(html_report, height=750, scrolling=True)
+        
+    if options=='Model 2 report':
+        with open("reports/classification_performance_report2.html", "r",encoding="utf-8") as f:
+            html_report = f.read()
+        
+        components.html(html_report, height=750, scrolling=True)
+        
+    
+    
+    
+    
+    
+
     
 if choice == "Prediction":
     
