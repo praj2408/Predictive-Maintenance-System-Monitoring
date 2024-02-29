@@ -14,6 +14,12 @@ jobs:
         with:
           fetch-depth: 0
           lfs: true
+
+      - name: Setup Git LFS
+        run: |
+          git lfs install
+          git lfs track "*"
+          
       - name: Push to hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
