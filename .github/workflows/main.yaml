@@ -19,8 +19,8 @@ jobs:
         run: |
           git lfs install
           git lfs track "*"
-          
+
       - name: Push to hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: git push --force https://praj2408:$HF_TOKEN@huggingface.co/spaces/praj2408/predictive-maintenance main
+        run: git-lfs push --force https://praj2408:$HF_TOKEN@huggingface.co/spaces/praj2408/predictive-maintenance main
