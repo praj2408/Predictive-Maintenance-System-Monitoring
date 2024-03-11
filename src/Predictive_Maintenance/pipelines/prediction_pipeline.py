@@ -61,7 +61,7 @@ def prediction(type, rpm, torque, tool_wear, air_temp, process_temp):
     return result1, result2
 
 
-prediction('Low', 1410.0,65.70,191.00,25.75,35.85)
+#prediction('Low', 1410.0,65.70,191.00,25.75,35.85)
 
 # Sample Inputs 
 
