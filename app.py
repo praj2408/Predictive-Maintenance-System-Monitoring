@@ -42,11 +42,13 @@ if choice == "EDA":
     st.image("reports/q2.png")
     st.write("**Low quality varient makes up majority of the dataset with 60% of the data, followed by medium quality varient with 30% and high quality varient with 10%**")
     
+    
     st.header('Question 3')
     st.write("What is the range of values for the continious variables 'air temperature', 'process temperature', 'rotational speed', 'torque', and 'tool wear'?")
     st.write("Are there any outliers in the dataset?")
     st.image("reports/q3.png")
     st.write("**Rotational speed may or may not be actual outliers, therefore we'll keep them in the dataset for now.**")
+    
     
     st.header('Question 4')
     st.write("Is there any correlation between the continuous variables and the 'machine failure' label? For example, does the tool wear increase the likelihood of machine failure?")
@@ -54,6 +56,7 @@ if choice == "EDA":
     st.write("**Null Hypothesis: There is no significant relationship between the different colums and Machine Failure**")
     st.write("**Alternate Hypothesis: There is a significant relationship between the tool wear and the machine failure label**")
     st.image("reports/h0.png")
+
 
     st.header('Question 5')
     st.write("Is there any correlation between the categorical variable 'productID' and the continuous variable? For example, is the 'rotational speed' higher for high-quality products than for low-quality products? ")
@@ -64,7 +67,13 @@ if choice == "EDA":
 
 if choice == "Performance Measures":
     
-    pass
+    st.title("Model 1")
+    st.image("reports/model1.png")
+    
+    
+    
+    st.title("Model 2")
+    st.image("reports/model2.png")
     
     
     
