@@ -1,6 +1,8 @@
 import streamlit as st
 from streamlit_extras import add_vertical_space
 import streamlit.components.v1 as components
+from annotated_text import annotated_text
+
 
 st.set_page_config(layout='wide')
 
@@ -68,11 +70,13 @@ if choice == "EDA":
 if choice == "Performance Measures":
     
     st.title("Model 1")
+    annotated_text(("Best Model 1", "Random Forest Classifier"))
     st.image("reports/model1.png")
     
     
     
     st.title("Model 2")
+    annotated_text(("Best Model 1", "Random Forest Classifier"))
     st.image("reports/model2.png")
     
     
