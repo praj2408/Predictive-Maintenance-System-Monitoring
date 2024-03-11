@@ -33,9 +33,34 @@ if choice == "EDA":
     
     st.header('Question 1')
     st.write("What is the distribution of the 'machine failure' label in the dataset? How many instances have failed and how many have not failed?")
+    st.image("reports/q1.png")
+    st.write("**The success rate of the mahcine is 96.52% and the highest type of failure is HDF(Heat Dissipation Failure) with 1.15% failure rate**")
     
     
+    st.header('Question 2')
+    st.write("What is the distribution of the 'productID' variable in the dataset? How many instances are of low, medium, and high quality varients?")
+    st.image("reports/q2.png")
+    st.write("**Low quality varient makes up majority of the dataset with 60% of the data, followed by medium quality varient with 30% and high quality varient with 10%**")
     
+    st.header('Question 3')
+    st.write("What is the range of values for the continious variables 'air temperature', 'process temperature', 'rotational speed', 'torque', and 'tool wear'?")
+    st.write("Are there any outliers in the dataset?")
+    st.image("reports/q3.png")
+    st.write("**Rotational speed may or may not be actual outliers, therefore we'll keep them in the dataset for now.**")
+    
+    st.header('Question 4')
+    st.write("Is there any correlation between the continuous variables and the 'machine failure' label? For example, does the tool wear increase the likelihood of machine failure?")
+    st.image("reports/q4.png")
+    st.write("**Null Hypothesis: There is no significant relationship between the different colums and Machine Failure**")
+    st.write("**Alternate Hypothesis: There is a significant relationship between the tool wear and the machine failure label**")
+    st.image("reports/h0.png")
+
+    st.header('Question 5')
+    st.write("Is there any correlation between the categorical variable 'productID' and the continuous variable? For example, is the 'rotational speed' higher for high-quality products than for low-quality products? ")
+    st.image("reports/q5.png")
+    st.write("**Process Temperature seems to have an effect on high quality varient machines. Therefore we can say that Process Temperature is correlated with machine type.**")
+
+
 
 if choice == "Performance Measures":
     
@@ -85,19 +110,19 @@ if choice == "Prediction":
 
     st.write('You selected:', type)
     
-    rpm = st.number_input('RPM')
+    rpm = st.number_input('RPM', value=1410.0)
     st.write('The current rpm is ', rpm)
     
-    torque = st.number_input('Torque')
+    torque = st.number_input('Torque', value=65.70)
     st.write('The current rpm is ', torque)
     
-    tool_wear = st.number_input('Tool Wear')
+    tool_wear = st.number_input('Tool Wear', value=191.00)
     st.write('The current rpm is ', tool_wear)
     
-    air_temp = st.number_input('Air Temperature')
+    air_temp = st.number_input('Air Temperature', value=25.75)
     st.write('The current rpm is ', air_temp)
     
-    process_temp = st.number_input('Process Temperature')
+    process_temp = st.number_input('Process Temperature', value=35.85)
     st.write('The current rpm is ', process_temp)
     
     if st.button("Predict"):
